@@ -25,6 +25,9 @@ Pour recompiler les fichier CSS, dans `dist/`, il suffit de taper la commande :
 npm run build
 ```
 
+Pour tester, une manière de faire est d'importer le css des dsfr-rtl dans les pages d'exemple du dsfr et ajouter l'attribut `dir="rtl"` sur l'élément <body>
+
+
 ## Git
 
 ### Branches

@@ -1,8 +1,9 @@
 # DSFR RTL
 
-DSFR Right To Left (ci-après RTL) est une extension au Système de Design de l'État.
+DSFR Right To Left (ci-après RTL) est une extension au Système de Design de l'État (DSFR).
 
-Il fournit l'ensemble des styles pour adapter le DSFR pour des langues qui s'écrivent de droite à gauche.
+Il fournit l'ensemble des styles pour adapter le DSFR pour des langues lues de droite à gauche.
+
 
 ## Installation
 
@@ -22,12 +23,20 @@ DSFR RTL est également disponible via NPM. Pour cela, plusieurs prérequis :
 
 Installez ensuite le package DSFR RTL avec la commande `npm install @gouvfr/dsfr-rtl`.
 
-## Importation du style
+## Utilisation
+La librairie dsfr-rtl se compose d'un fichier unique qui permet de surcharger le comportement des composants et des classes utilitaires du dsfr.
+Il est disponible en version compilé CSS :
+* dist/dsfr-rtl.css
+* dist/dsfr-rtl.min.css
 
-Lier la feuille de style au HTML :
+Ou en version Sass, importable depuis votre Sass ou framework Js, et permettant de paramétrer les classes utilitaires à générer :
+* src/dsfr-rtl.scss
+
+
+Pour importer la feuille de style via HTML :
 
 ```html
-<link rel="stylesheet" href="./style/dsfr-rtl.min.css" />
+<link rel="stylesheet" href="style/dsfr-rtl.min.css" />
 ```
 
 ## Sujets spécifiques à l'intégration HTML
@@ -36,14 +45,15 @@ Lier la feuille de style au HTML :
 Par exemple sur le lien "Qu’est-ce que FranceConnect+", la mise en place de cette classe évitera que le "+" ne passe tout à gauche : `<span class="fr-text-plaintext">FranceConnect+</span>`
 
 * Le sens des **icônes** doit être inversé lorsque celles-ci ont une direction relative à la navigation dans le site ou à la lecture. Certaines icônes ont été gérées directement dans le fichier SCSS de cette extension (la flèche d'une card par exemple).
-Certaines icônes auront besoin d'un traitement manuel et spécifique, c'est pour cela que la class CSS existe `fr-icon-rtl`. Elle permettra d'opérer une symétrie verticale pour inverser le sens de l'icône.
+Certaines icônes auront besoin d'un traitement manuel et spécifique, pour cela cette librairie met à disposition une classe CSS `fr-icon-rtl`. Elle permettra d'opérer une symétrie verticale pour inverser le sens de l'icône. Ex: `<span class="fr-icon-arrow-left-line fr-icon-rtl" aria-hidden="true"></span>`
+
 
 * Sur le composant indicateur d'étape (Stepper), si les **numéros d’étapes** sont injectés dynamiquement via un Template, l’ordre des éléments change en RTL :
     * en français : étape [current] sur [max]
     * en arabe : [max] sur [current] étape
 
 
-## Points de vigilance
+## Spécifités des langues RTL
 
 * Attention au **line-height**, l'écart entre les lignes est souvent plus faible en arabes car les caractères prennent plus de place en hauteur. De plus, les caractères pourraient être croppés si le line-height est trop faible.
 
