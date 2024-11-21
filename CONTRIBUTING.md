@@ -7,31 +7,39 @@ Le dépôt est disponible à cette adresse : [https://github.com/GouvernementFR/
 Afin de pouvoir commencer à développer et contribuer au DSFR-chart, assurez-vous tout d'abord de faire un fork du projet depuis votre compte GitHub (https://help.github.com/articles/fork-a-repo/)
 
 Il suffit ensuite de cloner votre fork, en téléchargeant les sources depuis le bouton “clone” de github, ou via un terminal avec commande :
+
 ```shell
 git clone https://github.com/VOTRE_NOM_UTILISATEUR_GITHUB/dsfr-rtl
 ```
 
 Une fois le projet récupéré, se placer dedans avec `cd dsfr-rtl`, et installer les dépendances (node_modules) avec :
 
-`npm install`
+```shell
+npm install
+```
 
-Seul le fichier sass présent dans `src/` est modifiable. Pour recompiler les fichier CSS, dans `dist/`, il suffit de tapper la commande :
+Seul le fichier sass présent dans `src/` est modifiable.
+Pour recompiler les fichier CSS, dans `dist/`, il suffit de taper la commande :
 
-`npm run build`
-
+```shell
+npm run build
+```
 
 ## Git
 
 ### Branches
-La branche **dev** est la principale branche de travail - la branche **main** correspondant aux versions de productions livrées aux utilisateurs. Il est donc nécessaire de créer de nouvelles branches de travail pour l'ajout et la modification de packages depuis la branche **dev**. (Voir la section [Utilisation > Git](#git), pour le fonctionnement détaillé).
 
+La branche **dev** est la principale branche de travail - la branche **main** correspondant aux versions de production livrées aux utilisateurs.
+Il est donc nécessaire de créer de nouvelles branches de travail pour l'ajout et la modification de packages depuis la branche **dev**. (Voir la section [Utilisation > Git](#git), pour le fonctionnement détaillé).
 
 Afin de travailler sur un ajout ou un correctif, il est nécessaire de créer une nouvelle branche à partir de la branche `dev`.
+
 ```shell
 git checkout -b prefixe/ma-branche dev
 ```
 
 #### Nommage des branches <!-- omit in toc -->
+
 Afin d'organiser et d'identifier rapidement la nature du contenu des branches, il est nécessaire de préfixer les branches :
 feat/nom-de-la-branche pour les nouvelles fonctionnalités ou nouveaux composants.
 fix/nom-de-la-branche pour les correctifs apportés sur des fonctionnalités ou composants existants.
@@ -49,8 +57,9 @@ Nous utilisons des [conventional commits](https://www.conventionalcommits.org/en
 ```
 
 Les valeurs possibles pour le `type` de commit sont :
-* **fix**: Un commit de type `fix` permet de patcher un bug ([[PATCH]](https://semver.org/#summary))
-* **feat**: Un commit de type `feat` permet d'introduire une nouvelle fonctionnalité ([[MINOR]](https://semver.org/#summary))
+
+* **fix** : Un commit de type `fix` permet de patcher un bug ([[PATCH]](https://semver.org/#summary))
+* **feat** : Un commit de type `feat` permet d'introduire une nouvelle fonctionnalité ([[MINOR]](https://semver.org/#summary))
 * D'autres types que `feat` et `fix` peuvent être utilisés, nous utilisons [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional), qui recommande l'utilisation des principaux types suivants : `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, `test`
 
 * **BREAKING CHANGE**: Un commit avec un footer `BREAKING CHANGE:` introduit un changement important dans le code ([[MAJOR]](https://semver.org/#summary))
