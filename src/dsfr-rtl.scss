@@ -1,28 +1,32 @@
-// VARIABLES :
-
-// $grid-breakpoints: ("sm", "md", "lg", "xl") !default;
-
-// $spacing-settings: (
-//   margin: (
-//     from: -8,
-//     through: 32,
-//     half: 2,
-//     special: auto,
-//     breakpoints: md
-//   ),
-//   padding: (
-//     from: 0,
-//     half: 2,
-//     through: 32,
-//     breakpoints: md
-//   )
-// ) !default;
-
 @use 'sass:map';
 @use 'sass:string';
 @use 'sass:math';
 @use 'sass:meta';
 @use 'sass:list';
+
+$breakpoints: (
+  "sm": "36em",
+  "md": "48em",
+  "lg": "62em",
+  "xl": "78em",
+);
+$spacing-settings: (
+  margin: (
+    from: -8,
+    through: 32,
+    half: 2,
+    special: auto,
+    breakpoints: md
+  ),
+  padding: (
+    from: 0,
+    half: 2,
+    through: 32,
+    breakpoints: md
+  )
+) !default;
+$grid-breakpoints: ("sm", "md", "lg", "xl") !default;
+
 
 [dir="rtl"] {
   // Global
@@ -36,45 +40,6 @@
         margin-left: 0;
         margin-right: 0.25rem;
         transform: scaleX(-1);
-      }
-    }
-  }
-
-  // Table
-  .fr-table__content td,
-  .fr-table__content th {
-    text-align: right;
-  }
-  .fr-table__content table tbody,
-  .fr-table__content table thead {
-    th, th[role="columnheader"] {
-      background-position: 0 100%, 0 0;
-    }
-  }
-  .fr-table caption {
-    text-align: right;
-  }
-  .fr-table.fr-table--bordered .fr-table__content {
-    td, th {
-      background-position: 0 100%, 0 0;
-      &:last-child {
-        background-position: 100% 100%;
-      }
-    }
-  }
-  .fr-table__content .fr-cell--right {
-    text-align: left;
-  }
-  .fr-table__content .fr-cell--fixed .fr-checkbox-group .fr-label::before {
-    right: -1.25rem;
-  }
-  .fr-btn--sort {
-    &,
-    &[aria-sort="ascending"],
-    [aria-sort="descending"] {
-      &::before {
-        margin-right: 0;
-        margin-left: 0.5rem;
       }
     }
   }
@@ -157,12 +122,12 @@
       margin-right: 0;
     }
   }
-  @media (min-width: 36em) {
+  @media (min-width: #{map.get($breakpoints, sm)}) {
     .fr-footer__partners-title {
       text-align: right;
     }
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-footer__bottom-item {
       margin: 0.5rem 0.75rem 0 0;
       &::before {
@@ -543,7 +508,7 @@
   .fr-highlight {
     background-position: 100% 0;
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-highlight {
       margin-left: 0;
       padding-left: 0;
@@ -615,13 +580,17 @@
       right: calc(-1.5rem - 1px);
     }
   }
-  @media (min-width: 48em) {
+  .fr-consent-service .fr-consent-service__collapse-btn::after {
+    margin-left: -1.25rem;
+    margin-right: 0.25rem;
+  }
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-consent-banner {
       left: auto;
       right: 2.5rem;
     }
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-consent-service__radios {
       right: auto;
       left: 0;
@@ -725,7 +694,7 @@
     margin-left: 0.5rem;
     margin-right: 0;
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-follow .fr-grid-row > *:first-child:last-child > .fr-follow__newsletter > :first-child {
         padding-left: 0.75rem;
         padding-right: 0;
@@ -788,7 +757,7 @@
   .fr-header__logo .fr-logo::before {
     margin-right: auto;
   }
-  @media (min-width: 62em) {
+  @media (min-width: #{map.get($breakpoints, lg)}) {
     .fr-header .fr-btns-group:not(.fr-btns-group--sm):not(.fr-btns-group--lg):not([class^="fr-btns-group--icon-"]):not([class*=" fr-btns-group--icon-"]) .fr-btn {
       &[class*=" fr-fi-"],
       &[class*=" fr-icon-"],
@@ -813,7 +782,7 @@
       }
     }
   }
-  @media (min-width: 62em) {
+  @media (min-width: #{map.get($breakpoints, lg)}) {
     .fr-header__tools .fr-header__search {
       margin-left: 0;
       margin-right: auto;
@@ -841,7 +810,7 @@
     margin-left: 0.5rem;
     margin-right: -0.125rem;
   }
-  @media (min-width: 62em) {
+  @media (min-width: #{map.get($breakpoints, lg)}) {
     .fr-header .fr-btns-group:not(.fr-btns-group--sm):not(.fr-btns-group--lg):not([class^="fr-btns-group--icon-"]):not([class*=" fr-btns-group--icon-"]) .fr-btn:not([class^="fr-icon-"]):not([class*=" fr-icon-"]):not([class^="fr-fi-"]):not([class*=" fr-fi-"])::before {
       margin-left: 0.5rem;
       margin-right: -0.125rem;
@@ -868,7 +837,7 @@
   }
 
   // Callout
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-callout {
       &[class*=" fr-fi-"],
       &[class*=" fr-icon-"],
@@ -929,7 +898,7 @@
     }
   }
 
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-notice__body {
       padding: 0 0 0 3rem;
     }
@@ -946,7 +915,7 @@
       }
     }
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-quote--column {
       margin-left: 0;
       margin-right: 13.5rem;
@@ -1072,13 +1041,13 @@
   }
 
   // Sidemenu
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-sidemenu {
       padding-left: 2rem;
       padding-right: 0;
     }
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-sidemenu__inner {
       box-shadow: inset 1px 0 0 0 var(--border-default-grey);
       padding: 0 0 0 1.5rem;
@@ -1103,7 +1072,7 @@
     margin-left: 0;
     margin-right: auto;
   }
-  @media (min-width: 48em) {
+  @media (min-width: #{map.get($breakpoints, md)}) {
     .fr-sidemenu__btn[aria-expanded] {
       padding: 0.75rem 1rem 0.75rem 2.5rem;
       &::after {
@@ -1200,6 +1169,7 @@
     }
     .fr-range__output {
       transform: translateX(calc(-1 * (var(--progress-right) - var(--thumb-size) * 0.5))) !important;
+      unicode-bidi: plaintext;
     }
   }
 
@@ -1245,30 +1215,47 @@
     margin-right: -0.125rem;
   }
 
+  // Table
+  .fr-table__content td,
+  .fr-table__content th {
+    text-align: right;
+  }
+  .fr-table__content table tbody,
+  .fr-table__content table thead {
+    th, th[role="columnheader"] {
+      background-position: 0 100%, 0 0;
+    }
+  }
+  .fr-table caption {
+    text-align: right;
+  }
+  .fr-table.fr-table--bordered .fr-table__content {
+    td, th {
+      background-position: 0 100%, 0 0;
+      &:last-child {
+        background-position: 100% 100%;
+      }
+    }
+  }
+  .fr-table__content .fr-cell--right {
+    text-align: left;
+  }
+  .fr-table__content .fr-cell--fixed .fr-checkbox-group .fr-label::before {
+    right: -1.25rem;
+  }
+  .fr-btn--sort {
+    &,
+    &[aria-sort="ascending"],
+    [aria-sort="descending"] {
+      &::before {
+        margin-right: 0;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
   // Spacings / Espacements
   $sides: "l", "r";
-  $breakpoints: (
-    "sm": "36em",
-    "md": "48em",
-    "lg": "62em",
-    "xl": "78em",
-  ) !default;
-  $spacing-settings: (
-    margin: (
-      from: -8,
-      through: 32,
-      half: 2,
-      special: auto,
-      breakpoints: md
-    ),
-    padding: (
-      from: 0,
-      half: 2,
-      through: 32,
-      breakpoints: md
-    )
-  ) !default;
-
   @mixin spacing-property-variations($prop, $value, $breakpoint) {
     @each $side in $sides {
       $chunks: string.split(#{math.abs($value)}, '.');
@@ -1342,7 +1329,6 @@
 
   // Grid offset
   $columns: 12;
-  $grid-breakpoints: ("sm", "md", "lg", "xl") !default;
   @mixin col-offset($breakpoint: null) {
     @for $i from 1 through $columns {
       $mod: if($breakpoint, $breakpoint + '-', '');

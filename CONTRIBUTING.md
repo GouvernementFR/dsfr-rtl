@@ -1,10 +1,10 @@
-# GitFlow du DSFR Chart
+# GitFlow du DSFR RTL
 
 ## Installation
 
 Le dépôt est disponible à cette adresse : [https://github.com/GouvernementFR/dsfr-rtl](https://github.com/GouvernementFR/dsfr-rtl)
 
-Afin de pouvoir commencer à développer et contribuer au DSFR-chart, assurez-vous tout d'abord de faire un fork du projet depuis votre compte GitHub (https://help.github.com/articles/fork-a-repo/)
+Afin de pouvoir commencer à développer et contribuer au DSFR-rtl, assurez-vous tout d'abord de faire un fork du projet depuis votre compte GitHub (https://help.github.com/articles/fork-a-repo/)
 
 Il suffit ensuite de cloner votre fork, en téléchargeant les sources depuis le bouton “clone” de github, ou via un terminal avec commande :
 

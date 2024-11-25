@@ -13,7 +13,7 @@ L'installation de DSFR RTL peut se faire de différentes manières :
 
 ### Fichiers statiques
 
-Il est possible de télécharger les sources de ce repository au format .zip depuis [la page Release de Github](https://github.com/GouvernementFR/dsfr-rtl/releases). Le fichier compilé se trouve dans `dist/dsfr-rtl.css`, ou `dist/dsfr-rtl.min.css` pour la version minifiée. Vous trouverez aussi une version sass `src/dsfr-rtl.scss` paramètrable via des variables, permettant de paramétrer les classes utilitaires à générées.
+Il est possible de télécharger les sources de ce repository au format .zip depuis [la page Release de Github](https://github.com/GouvernementFR/dsfr-rtl/releases). Le fichier compilé se trouve dans `dist/dsfr-rtl.css`, ou `dist/dsfr-rtl.min.css` pour la version minifiée. Vous trouverez aussi une version sass `src/dsfr-rtl.scss` paramètrable via des variables, permettant de paramétrer les classes utilitaires à générer.
 
 ### NPM
 
