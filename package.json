@@ -1,5 +1,5 @@
 {
-  "name": "dsfr-rtl",
+  "name": "@gouvfr/dsfr-rtl",
   "version": "1.0.0",
   "description": "DSFR Right To Left (RTL) est une extension au Système de Design de l'État. Il fournit l'ensemble des styles pour adapter le DSFR pour des langues qui s'écrivent de droite à gauche.",
   "scripts": {
