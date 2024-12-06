@@ -483,10 +483,6 @@
 [dir=rtl] .fr-nav__link {
   text-align: right;
 }
-[dir=rtl] .fr-nav__item.fr-nav__item--align-right .fr-menu .fr-nav__btn,
-[dir=rtl] .fr-nav__item.fr-nav__item--align-right .fr-menu .fr-nav__link {
-  text-align: left;
-}
 [dir=rtl] .fr-nav__btn[aria-current]:not([aria-current=false])::before,
 [dir=rtl] .fr-nav__link[aria-current]:not([aria-current=false])::before {
   left: auto;
@@ -696,17 +692,50 @@
 [dir=rtl] input[type=button].fr-tag[aria-pressed=true]:hover {
   background-image: radial-gradient(circle at 0.25rem 0.25rem, transparent 0.578125rem, var(--background-active-blue-france-hover) 0.625rem);
 }
+[dir=rtl] button.fr-tag[aria-pressed=true]:disabled, [dir=rtl] button.fr-tag[aria-pressed=true]:disabled:hover,
+[dir=rtl] input[type=button].fr-tag[aria-pressed=true]:disabled,
+[dir=rtl] input[type=button].fr-tag[aria-pressed=true]:disabled:hover {
+  background-image: radial-gradient(circle at 0.25rem 0.25rem, transparent 0.578125rem, var(--background-disabled-grey) 0.625rem);
+}
 [dir=rtl] button.fr-tag[aria-pressed=true].fr-tag--sm:not(:disabled),
 [dir=rtl] input[type=button].fr-tag[aria-pressed=true].fr-tag--sm:not(:disabled) {
-  background-image: radial-gradient(circle at 0.25rem 0.1875rem, transparent 0.4475rem, var(--background-active-blue-france) 0.5rem);
+  background-image: radial-gradient(circle at 0 0.1875rem, transparent 0.4475rem, var(--background-active-blue-france) 0.5rem);
 }
 [dir=rtl] button.fr-tag[aria-pressed=true].fr-tag--sm:hover,
 [dir=rtl] input[type=button].fr-tag[aria-pressed=true].fr-tag--sm:hover {
-  background-image: radial-gradient(circle at 0.25rem 0.1875rem, transparent 0.4475rem, var(--background-active-blue-france-hover) 0.5rem);
+  background-image: radial-gradient(circle at 0 0.1875rem, transparent 0.4475rem, var(--background-active-blue-france-hover) 0.5rem);
+}
+[dir=rtl] button.fr-tag[aria-pressed=true].fr-tag--sm:disabled, [dir=rtl] button.fr-tag[aria-pressed=true].fr-tag--sm:disabled:hover,
+[dir=rtl] input[type=button].fr-tag[aria-pressed=true].fr-tag--sm:disabled,
+[dir=rtl] input[type=button].fr-tag[aria-pressed=true].fr-tag--sm:disabled:hover {
+  background-image: radial-gradient(circle at 0 0.1875rem, transparent 0.4475rem, var(--background-disabled-grey) 0.5rem);
+}
+[dir=rtl] button.fr-tag[aria-pressed=true].fr-tag--sm::after,
+[dir=rtl] input[type=button].fr-tag[aria-pressed=true].fr-tag--sm::after {
+  left: 0;
+  right: auto;
 }
 [dir=rtl] .fr-tags-group.fr-tags-group--sm button.fr-tag.fr-tag--dismiss::after,
 [dir=rtl] .fr-tags-group.fr-tags-group--sm input[type=button].fr-tag.fr-tag--dismiss::after {
   margin-right: 0.1875rem;
+}
+[dir=rtl] .fr-tags-group.fr-tags-group--sm button.fr-tag[aria-pressed=true]:not(:disabled),
+[dir=rtl] .fr-tags-group.fr-tags-group--sm input[type=button].fr-tag[aria-pressed=true]:not(:disabled) {
+  background-image: radial-gradient(circle at 0 0.1875rem, transparent 0.4475rem, var(--background-active-blue-france) 0.5rem);
+}
+[dir=rtl] .fr-tags-group.fr-tags-group--sm button.fr-tag[aria-pressed=true]:hover,
+[dir=rtl] .fr-tags-group.fr-tags-group--sm input[type=button].fr-tag[aria-pressed=true]:hover {
+  background-image: radial-gradient(circle at 0 0.1875rem, transparent 0.4475rem, var(--background-active-blue-france-hover) 0.5rem);
+}
+[dir=rtl] .fr-tags-group.fr-tags-group--sm button.fr-tag[aria-pressed=true]:disabled, [dir=rtl] .fr-tags-group.fr-tags-group--sm button.fr-tag[aria-pressed=true]:disabled:hover,
+[dir=rtl] .fr-tags-group.fr-tags-group--sm input[type=button].fr-tag[aria-pressed=true]:disabled,
+[dir=rtl] .fr-tags-group.fr-tags-group--sm input[type=button].fr-tag[aria-pressed=true]:disabled:hover {
+  background-image: radial-gradient(circle at 0 0.1875rem, transparent 0.4475rem, var(--background-disabled-grey) 0.5rem);
+}
+[dir=rtl] .fr-tags-group.fr-tags-group--sm button.fr-tag[aria-pressed=true]::after,
+[dir=rtl] .fr-tags-group.fr-tags-group--sm input[type=button].fr-tag[aria-pressed=true]::after {
+  left: 0;
+  right: auto;
 }
 @media (min-width: 48em) {
   [dir=rtl] .fr-sidemenu {
@@ -804,7 +833,7 @@
   margin-right: auto;
 }
 [dir=rtl] .fr-range[data-fr-js-range] {
-  --progress-left: 0px;
+  --progress-left: 0.0001px;
 }
 [dir=rtl] .fr-range[data-fr-js-range]::after {
   clip-path: polygon(calc(100% - var(--progress-left)) 0, calc(100% - var(--progress-right)) 0, calc(100% - var(--progress-right)) 100%, calc(100% - var(--progress-left)) 100%);
@@ -1224,6 +1253,14 @@
   margin-left: 7.75rem !important;
   margin-right: 0 !important;
 }
+[dir=rtl] .fr-ml-32v {
+  margin-right: 8rem !important;
+  margin-left: 0 !important;
+}
+[dir=rtl] .fr-mr-32v {
+  margin-left: 8rem !important;
+  margin-right: 0 !important;
+}
 [dir=rtl] .fr-mr-auto {
   margin-left: auto !important;
 }
@@ -1583,6 +1620,14 @@
     margin-left: 7.75rem !important;
     margin-right: 0 !important;
   }
+  [dir=rtl] .fr-ml-32v {
+    margin-right: 8rem !important;
+    margin-left: 0 !important;
+  }
+  [dir=rtl] .fr-mr-32v {
+    margin-left: 8rem !important;
+    margin-right: 0 !important;
+  }
   [dir=rtl] .fr-mr-breapoint-auto {
     margin-left: auto !important;
   }
@@ -1862,6 +1907,14 @@
   padding-left: 7.75rem !important;
   padding-right: 0 !important;
 }
+[dir=rtl] .fr-pl-32v {
+  padding-right: 8rem !important;
+  padding-left: 0 !important;
+}
+[dir=rtl] .fr-pr-32v {
+  padding-left: 8rem !important;
+  padding-right: 0 !important;
+}
 @media (min-width: 48em) {
   [dir=rtl] .fr-pl-0 {
     padding-right: 0rem !important;
@@ -2133,6 +2186,14 @@
   }
   [dir=rtl] .fr-pr-31v {
     padding-left: 7.75rem !important;
+    padding-right: 0 !important;
+  }
+  [dir=rtl] .fr-pl-32v {
+    padding-right: 8rem !important;
+    padding-left: 0 !important;
+  }
+  [dir=rtl] .fr-pr-32v {
+    padding-left: 8rem !important;
     padding-right: 0 !important;
   }
 }
